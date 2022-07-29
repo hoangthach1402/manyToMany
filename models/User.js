@@ -15,6 +15,10 @@ userSchema.virtual('orders',{
     localField:'_id',
     foreignField:'user'
 })
-
+userSchema.virtual('comments',{
+    ref:'Comment',
+    localField:'_id',
+    foreignField:'doc'
+})
 const User = mongoose.model('User',userSchema,'User')
 module.exports = User
